@@ -1,0 +1,30 @@
+
+CREATE DATABASE IF NOT EXISTS todo_list;
+USE todo_list;
+
+CREATE TABLE IF NOT EXISTS tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    task VARCHAR(255)
+)
+
+CREATE PROCEDURE add_task(
+    IN task_input VARCHAR(255)
+)
+BEGIN
+    INSERT INTO tasks (task) VALUES (task_input);
+
+
+
+CREATE PROCEDURE update_task(
+    IN task_id_input INT,
+    IN new_task_input VARCHAR(255)
+)
+BEGIN
+    UPDATE tasks SET task = new_task_input WHERE id = task_id_in
+
+
+CREATE PROCEDURE delete_task(
+    IN task_id_input INT
+)
+    DELETE FROM tasks WHERE id = task_id_input;
+
